@@ -1,0 +1,60 @@
+{%extends "registration/base.html"%}
+{% load bootstrap3 %}
+{% block content %}
+<div class="container">
+  <div class="row">
+    <!-- Empty div -->
+    
+    <div class="col-md-4">
+
+      {% if form.errors %}
+        <p> Password or Username is incorrect </p>
+      {% endif %}
+      <div class="panel panel-default">
+
+        <div class="panel-heading" style="background-color: rgb(245, 39, 108);">
+          <h3 class="text-center">Sign In</h3>
+
+        </div>
+        <div class="panel-body">
+
+          <form  action="/accounts/login/" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form%}
+
+            <div class="form-group">
+              <input type="submit" class="btn btn-primary btn-sm" value="Login">
+            </div>
+
+            <div class="form-group">
+              <p>Dont have an account?</p>
+                <a class='btn btn-danger' href="/accounts/register">Register</a>
+              </div>
+
+            <input type="hidden" name="next" value="{{next}}">
+            <img style="height: 60px" src="/media/image/unlockinsta.jpg" alt="">
+
+
+          </form>
+          
+
+        </div>
+
+      </div>
+
+
+    </div>
+    <!-- empty div -->
+    
+      <div class="col-md-3">
+          <img style="height: 600px" src="/media/image/AHcP.gif" alt="">
+        </div>
+        <div class="col-md-2"></div>
+        <div class="col-md-2">
+            <img style="height: 600px" src="/media/image/instamodel.jpg" alt="">
+          </div>
+        
+  </div>
+</div>
+
+{% endblock %}
