@@ -36,6 +36,37 @@ class Profile(models.Model):
     def __str__(self):
         return self.user.username
 
+class Category(models.Model):
+    photo_category = models.CharField(max_length=50)
+    
+    def save_category(self):
+        self.save()
+        
+    def delete_category(self):
+        self.delete()
+    
+    def update_category(self):
+        self.update_category()
+        
+    @classmethod
+    def get_category_id(cls, id):
+        category = Category.objects.get(pk = id)
+        return category
+
+    def __str__(self):
+        return self.photo_category
+        
+        
+class Location(models.Model):
+    image_location = models.CharField(max_length=50)
+    
+    @classmethod
+    def get_all_locations(cls):
+        all_locations = Location.objects.all()
+        return all_locations
+    
+    def __str__(self):
+        return self.image_location
 
 class Image(models.Model):
     class Meta:
@@ -84,7 +115,7 @@ class Image(models.Model):
         return images_category   
         
     def __str__(self):
-        return self.name
+        return self.title
     
 class Comments(models.Model):
     user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, related_name='user')
@@ -101,56 +132,8 @@ class Comments(models.Model):
     def __str__(self):
         return self.comment
     
-class Category(models.Model):
-    photo_category = models.CharField(max_length=50)
-    
-    def save_category(self):
-        self.save()
-        
-    def delete_category(self):
-        self.delete()
-    
-    def update_category(self):
-        self.update_category()
-        
-    @classmethod
-    def get_category_id(cls, id):
-        category = Category.objects.get(pk = id)
-        return category
-
-    def __str__(self):
-        return self.photo_category
-    
-    
-class Location(models.Model):
-    image_location = models.CharField(max_length=50)
-    
-    @classmethod
-    def get_all_locations(cls):
-        all_locations = Location.objects.all()
-        return all_locations
-    
-    def __str__(self):
-        return self.image_location
     
 class Subscriber(models.Model):
     name = models.CharField(max_length=30)
     email = models.EmailField()
     
-class Review(models.Model):
-    RATING_CHOICES = (
-        (10, '10'),
-        (20, '20'),
-        (30, '30'),
-        (40, '40'),
-        (50, '50'),
-        (60, '60'),
-        (70, '70'),
-        (80, '80'),
-        (90, '90'),
-        (100, '100'),
-
-    )
-    project = models.ForeignKey(Image, null=True, blank=True, on_delete=models.CASCADE, related_name="reviews")
-    user = models.ForeignKey(User, null=True, blank=True, on_delete=models.CASCADE, related_name='reviews')
-    ratings = models.IntegerField(choices=RATING_CHOICES, default=0)    
