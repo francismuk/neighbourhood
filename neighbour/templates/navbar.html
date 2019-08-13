@@ -1,7 +1,7 @@
 {% load bootstrap3 %}
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<body lang="en">
 
 <head>
   {% block styles %}
@@ -14,7 +14,7 @@
 </head>
 
 <body>
-  <nav class="navbar navbar-default" role="navigation">
+  <nav class="navbar navbar-darkz" role="navigation">
     <div class="container-fluid">
 
 
@@ -30,7 +30,7 @@
         <ul>
           <a class="navbar-brand" href="{% url 'index' %}"><img style="height:35px; width: 30px; padding-bottom: 15px"
               src="media/image/INSTAGRAM.png" alt=""></a>
-          <a style="font-family: 'Satisfy', cursive;" class="navbar-brand" href="{% url 'index' %}"> AWARDS </a>
+          <a style="font-family: 'Satisfy', cursive; color: white;" class="navbar-brand" href="{% url 'index' %}"> My Neighbourhood </a>
         </ul>
       </div>
 
@@ -85,6 +85,7 @@
       </div>
     </div>
   </nav>
+  <hr>
 </body>
 
 </html>
