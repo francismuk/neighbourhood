@@ -1,0 +1,90 @@
+{% load bootstrap3 %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  {% block styles %}
+  <link href="https://fonts.googleapis.com/css?family=Satisfy&display=swap" rel="stylesheet">
+
+  {% endblock %}
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+
+<body>
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+
+
+
+      <div class="navbar-header">
+        <button style="border-color: magenta" class="navbar-toggle" type="button" data-toggle="collapse"
+          data-target=".navbar-collapse">
+          <span class="sr-only">Toggle Navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <ul>
+          <a class="navbar-brand" href="{% url 'index' %}"><img style="height:35px; width: 30px; padding-bottom: 15px"
+              src="media/image/INSTAGRAM.png" alt=""></a>
+          <a style="font-family: 'Satisfy', cursive;" class="navbar-brand" href="{% url 'index' %}"> AWARDS </a>
+        </ul>
+      </div>
+
+
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right navbar-nav mr-auto">
+          <li class="nav-item">
+            <a href="{%url 'new-project'%}">New Post<img style="height:25px; width:25px; " src="media/image/instlogo.png"
+                alt=""></a>
+          </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item">
+            <form class="form-inline my-2 my-lg-0" style="padding-top: 7px">
+              <div class="input-group">
+                <form class="form-inline" role="search" action="{% url 'search' %}">
+                  <p>
+                      <a href="{%url 'search'%}">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">@</button>
+                    <input class="form-control my-2 my-sm-0 search-input" name="search" type="search"
+                      placeholder="Search Project" aria-label="Search">
+                    </a>
+                      </p>
+                </form>
+                <!-- <p>
+                      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">@</button>
+                      <input class="form-control mr-sm-2" type="search" placeholder="Username" aria-label="Search">
+                    </p> -->
+              </div>
+            </form>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+              aria-haspopup="true" aria-expanded="false">
+              Account
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <!-- <p><a class="dropdown-item" href="#">Action</a></p> -->
+              <p><a class="dropdown-item" href="/accounts/password/change">Change Password</a></p>
+              <div class="dropdown-divider"></div>
+              <p><a class="dropdown-item" href="/logout">Logout</a></p>
+            </div>
+          </li>
+
+        </ul>
+
+        {% else %}
+        <li>
+          <a class='btn btn-danger' href="/accounts/login">Login</a>
+        </li>
+
+        {% endif %}
+      </div>
+    </div>
+  </nav>
+</body>
+
+</html>
