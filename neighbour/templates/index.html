@@ -16,31 +16,25 @@
 <link rel="icon" href="https://www.instagram.com/favicon.ico" type="icon/images">
 
 <style>
-  .img-fluid {
-    min-height: 480px;
-    width: 480px;
+  #eachimage {
+    min-height: 100px;
+    /* min-width: 80px; */
   }
 </style>
 
 
 <div class="container">
     {% for image in images %}
-    <div class="row">
-      <div class="col-md-3"></div>
-      <div class="col-md-5">
+      <div class="col-md-3">
            <div class="card border-secondary"><a href="{% url 'image' image.id %}">
             <img src="{{image.image.url}}" data-target="#imageModal{{image.id}}" data-toggle="modal" alt="" class="img-responsive"
               id="eachimage"></a>
           {% autoescape on %}
-          <p><strong> Name of Project :</strong> {{ image.title | safe }}</p>
-          <p><strong> By: </strong> <a href="{% url 'index'  %}"><strong>{{ image.poster}}</strong></a></p>
-
+          <p style="color: ivory" ><strong> Neighbourhood :</strong> {{ image.title | safe }}</p>
           {% endautoescape %}
-          <br>
           <hr>
         </div>
     </div>
-  </div>
 {% endfor %}
 
 </div>
