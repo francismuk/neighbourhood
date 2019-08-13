@@ -63,7 +63,7 @@ def search_projects(request):
         message = "You haven't searched for any person"
         return render(request, 'search.html', {"message": message})
     
-def single_post(request, id):
+def image(request, id):
 
     try:
         image = Image.objects.get(pk=id)
