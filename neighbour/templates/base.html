@@ -6,9 +6,9 @@
 <head>
   <meta charset="utf-8">
   {% if title %}
-  <title>Moringa Tribune - {{title}}</title>
+  <title>Neighbourhood - {{title}}</title>
   {% else %}
-    <title> Moringa Tribune </title>
+    <title> Neighbourhood </title>
   {% endif %}
   <link rel="shortcut icon" href="{% static 'images/instagram.ico' %}" />
   {{ form.media }}
@@ -21,13 +21,13 @@
 
   {% endblock %}
 </head>
-<body>
+<body style="background-image: url(https://cdn.pixabay.com/photo/2015/12/01/15/43/black-1072366_960_720.jpg)" >
         {% include "navbar.html" %}
 
     {% block content %}
     <div class="container">
-    <div class="jumbotron text-center mb-0" style="background-image: url(https://images.unsplash.com/photo-1513151233558-d860c5398176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80); background-repeat:no-repeat; background-size: cover;">  
-        <h1 class="h1" style="font-family: 'Satisfy', cursive;color: rgb(248, 248, 248);font-size:70px;">AWARDS</h1>
+    <div class="jumbotron text-center mb-0" style="background-image: url(https://www.canadapost.ca/assets/img/blogs/consumer/movers/2013/oct/880x288-New-Neighbourhood.jpg); background-repeat:no-repeat; background-size: cover;">  
+        <h1 class="h1" style="font-family: 'Satisfy', cursive;color: rgb(248, 248, 248);font-size:70px;">My Neighbourhood</h1>
       </div>
       <p class="nav-item" style="text-align: center;">
           <a href="{%url 'new-project'%}"><img style="height:45px; width:45px; " src="media/image/instlogo.png" alt=""><br><small>Post Now</small></a>
