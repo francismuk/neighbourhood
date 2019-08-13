@@ -8,7 +8,7 @@ class SubscribeForm(forms.Form):
 class NewPostForm(forms.ModelForm):
     class Meta:
         model = Image
-        exclude = ['poster', 'post_date']
+        exclude = ['poster', 'post_date', 'comments']
         
         
 class CommentForm(forms.ModelForm):
