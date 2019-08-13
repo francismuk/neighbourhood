@@ -6,11 +6,11 @@ from rest_framework.authtoken.views import obtain_auth_token
 
 urlpatterns=[
     url('^$',views.index,name='index'),
-    url(r'^new/project$', views.new_project, name='new-project'),
+    url(r'^new/neighbourhood$', views.new_project, name='new-project'),
     url(r'^search/', views.search_projects, name='search'),
-    url(r'^projects/(\d+)',views.single_post,name ='image'),
+    url(r'^neighbourhoods/(\d+)',views.image,name ='image'),
     url(r'^ajax/newsletter/$', views.newsletter, name='newsletter'),
-    url(r'^api/projects/$', views.Projects.as_view()),
+    url(r'^api/neighbourhoods/$', views.Projects.as_view()),
 
     
 ]
