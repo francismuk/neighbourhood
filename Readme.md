@@ -1,10 +1,9 @@
-# [Instagram](https://mukawards.herokuapp.com)
-#### Web clone of the Instagram app
-#### July 29th, 2019
+# [Neighbourhood](https://mukhood.herokuapp.com)
+#### August 12th, 2019
 #### By **[FRANCIS MUKUHA](https://github.com/francismuk)**
 
 ## Description
-This is a web platform for web developers to showcase their work and rate each other's project based on the design,usability and content. To participate, users and required to have an account and logged in. For users who create account's with P-rates get to have and edit their profile, add projects done and rate other projects show cased.
+This is a web platform that allows users to signup and login then add the neighbourhood that they belong. Other users from the same neighbourhood will also get the chance to login and join the neighbourhood and communicate updates.
 
 ## Set Up and Installations
 
@@ -31,13 +30,13 @@ Install dependancies that will create an environment for the app to run
 ### Create the Database
 ```bash
 psql
-CREATE DATABASE insta;
+CREATE DATABASE;
 ```
 ### .env file
 Create .env file and paste paste the following filling where appropriate:
 ```python
 SECRET_KEY = '<Secret_key>'
-DBNAME = 'insta'
+DBNAME = '<dbname>'
 USER = '<Username>'
 PASSWORD = '<password>'
 DEBUG = True
@@ -81,10 +80,9 @@ Like and Follow functionality do not work
 | General Behavior | Input    | Output   |
 | :------------- | :------------- | :------------- |
 | User is authenticated | On homepage, click the sign up button  | Redirected to the user registration page |
-| User can add image posts to their accounts | clicks on add button above gallery  | Redirected to the forms page of adding posts |
+| User can add a new neighbourhood | clicks on add button  | Redirected to the forms page |
 | User is able to navigate through the pages | Clicks on the menu options in menu bar | Navigation through the pages |
-| User can view more details of project  | User clicks the see more text link | More details is revealed below |
-| User can rate project in either of the provided categories | Selects the number of the stars they wish | The stars are highlighted upto the selected number |
+| User can view more details of the neighbourhood  | User clicks the neighbourhood | More details is revealed below |
 
 
 
